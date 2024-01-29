@@ -54,11 +54,11 @@ Before I give you a long talk about how much nicer the syntax and code is let me
 
     ```java
     class MyQueries { 
-        public CompletableFuture<Optional<MyResultClass>> getResultNew(int id) {
-        return Query.query("SELECT result FROM results WHERE id = ?")
-                .single(Call.of().bind(id))
-                .map(row -> new MyResultClass(row.getString("result")))
-                .first();
+        public Optional<MyResultClass> getResultNew(int id) {
+            return Query.query("SELECT result FROM results WHERE id = ?")
+                    .single(Call.of().bind(id))
+                    .map(row -> new MyResultClass(row.getString("result")))
+                    .first();
         }
     }
     ```
