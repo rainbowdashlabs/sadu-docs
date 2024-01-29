@@ -22,9 +22,9 @@ nav:
   - 'Queries 2':
       - queries2/index.md
       - 'Configuration': queries2/configuration.md
-      - 'Migration': queries2/migration.md
       - 'Examples': queries2/examples.md
       - 'Components': queries2/components.md
+      - 'Migration': queries2/migration.md
   - 'Sql Types':
       - types/index.md
   - 'Updater':
