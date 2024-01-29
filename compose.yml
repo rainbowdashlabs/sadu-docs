@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  docs_dev:
+    volumes:
+      - "./docs/:/docs/docs"
+      - "./mkdocs.yml:/docs/mkdocs.yml"
+    build:
+      dockerfile: dev.Dockerfile
+    profiles:
+      - dev
+    ports:
+      - "80:80"
+
+  docs_live:
+    build:
+      dockerfile: Dockerfile
+    profiles:
+      - live
+    ports:
+      - "80:80"
