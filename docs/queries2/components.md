@@ -90,16 +90,14 @@ There are several ways to define your singleton query.
             .single(Calls.empty())
     ```
 
-=== "Verbose"
+    or
 
-    The most verbose and longest way
-    
     ```java
     Query.query("SELECT * FROM table;")
-            .single(Calls.single(Call.of()))
+            .single()
     ```
 
-=== "Short"
+=== "Simple"
 
     This version is shorter and quicker to write
     
@@ -108,21 +106,12 @@ There are several ways to define your singleton query.
             .single(Call.of())
     ```
 
-=== "Consumer"
-
-    There is also a consumer via the `Calls` class.
-    
-    ```java
-    Query.query("SELECT * FROM table;")
-            .single(Calls.single(call -> {}))
-    ```
-
 === "Access Storage"
 
     In case you have saved something into your query storage you can access the storage here
     ```java
     Query.query("SELECT * FROM table;")
-            .single(storage -> Calls.single(Call.of()));
+            .single(storage -> Call.of().asSingleCall());
     ```
 
 ### Batch calls
@@ -133,15 +122,6 @@ Batch calls are similar to singleton calls.
     
     Batch queries do not support selects
 
-=== "Verbose"
-
-    The most verbose and longest way
-    
-    ```java
-    query.query("INSERT INTO table(a,b) VALUES (:a, :b)")
-            .batch(Calls.batch(Call.of(),
-                    Call.of()));
-    ```
 
 === "Short"
 
@@ -175,8 +155,7 @@ Batch calls are similar to singleton calls.
 
     ```java
     query.query("INSERT INTO table(a,b) VALUES (:a, :b)")
-            .batch(storage -> Calls.batch(Call.of(),
-                    Call.of()));
+            .batch(storage -> Call.of().asBatchCall().add(Call.of()));
     ```
 
 ## Call

@@ -23,7 +23,7 @@ This returns all matching entries for our query and maps it to a user.
 
 ```java
 List<User> users = query.query("SELECT * FROM users WHERE id = ? AND name ILIKE :name")
-        .single(Calls.single(call -> call.bind(1).bind("name", "lilly")))
+        .single(Call.of().bind(1).bind("name", "lilly"))
         .map(User.map())
         .allAndGet();
 ```
@@ -36,7 +36,7 @@ If a result was returned the option won't be empty.
 
 ```java
 Optional<User> user = query.query("SELECT * FROM users where id = :id")
-        .single(Calls.single(call -> call.bind("id", 1)))
+        .single(Call.of().bind("id", 1)))
         .map(User.map())
         .oneAndGet();
 ```
@@ -109,17 +109,17 @@ try (var conn = query.withSingleTransaction()) {
     // Retrieve the first user and store them it to use it again later
     // From here on another query could be issued that uses the results of this query
     ManipulationResult manipulation = conn.query("INSERT INTO users(uuid, name) VALUES (:uuid::uuid, :name) RETURNING id, uuid, name")
-            .single(Calls.single(call -> call.bind("uuid", UUID.randomUUID(), AS_STRING).bind("name", "lilly")))
+            .single(Call.of().bind("uuid", UUID.randomUUID(), AS_STRING).bind("name", "lilly")))
             .map(User::map)
             .storeOneAndAppend("user")
             .query("INSERT INTO birthdays(user_id, birth_date) VALUES (:id, :date)")
             // produce error
-            .single(storage -> Calls.single(r -> r.bind("id", storage.getAs("user", User.class).get().id()).bind("date", "")))
+            .single(storage -> Call.of().bind("id", storage.getAs("user", User.class).get().id()).bind("date", "").asSingleCall())
             .insert();
 }
 
 List<User> users = query.query("SELECT * FROM users")
-        .single(Calls.empty())
+        .single()
         .map(User::map)
         .allAndGet();
 
@@ -138,11 +138,11 @@ Another good example for that is this query:
 // Retrieve the first user and store them it to use it again later
 // From here on another query could be issued that uses the results of this query
 ManipulationResult manipulation = query.query("INSERT INTO users(uuid, name) VALUES (:uuid::uuid, :name) RETURNING id, uuid, name")
-        .single(Calls.single(call -> call.bind("uuid", UUID.randomUUID(), AS_STRING).bind("name", "lilly")))
+        .single(Call.of().bind("uuid", UUID.randomUUID(), AS_STRING).bind("name", "lilly"))
         .map(User.map())
         .storeOneAndAppend("user")
         .query("INSERT INTO birthdays(user_id, birth_date) VALUES (:id, :date)")
-        .single(storage -> Calls.single(r -> r.bind("id", storage.getAs("user", User.class).get().id()).bind("date", LocalDate.of(1990, 1, 1))))
+        .single(storage -> Call.of().bind("id", storage.getAs("user", User.class).get().id()).bind("date", LocalDate.of(1990, 1, 1)).asSingleCall())
         .insert();
 ```
 

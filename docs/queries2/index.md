@@ -33,7 +33,7 @@ Before I give you a long talk about how much nicer the syntax and code is let me
             this.dataSource = dataSource;
         }
     
-        public CompletableFuture<Optional<MyResultClass>> getResultOld(int id) {
+        public Optional<MyResultClass> getResultOld(int id) {
             try (Connection conn = source().getConnection(); PreparedStatement stmt = conn.prepareStatement("SELECT result FROM results WHERE id = ?")) {
                 stmt.setInt(id);
                 ResultSet rs = stmt.executeQuery();
