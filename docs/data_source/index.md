@@ -59,7 +59,7 @@ class Main {
 }
 ```
 
-# Using relocation
+## Using relocation
 
 When using relocation you need to call `#driverClass` in the configure call and provide your driver class.
 This will avoid issues caused by the relocation which might block loading of the driver class.

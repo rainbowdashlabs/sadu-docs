@@ -1,3 +1,5 @@
+# Updater
+
 {{ version }}
 
 SADU provides a database updater which deploys patch to your database. Which scripts are deployed is defined by a database version in
