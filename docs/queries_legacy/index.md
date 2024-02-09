@@ -7,6 +7,10 @@
     The legacy queries module was removed.
     Use the new [queries](./../queries) of v2 instead, which provides better usability.
 
+!!! danger
+    
+    This module is no longer available in v2
+
 SADU provides a query builder, which allows easy guidance through requesting data from your database.
 Import it into your project to use it.
 

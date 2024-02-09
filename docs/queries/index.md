@@ -1,10 +1,10 @@
-# Queries 2
+# Queries
 
 {{ version }}
 
 !!! tip
 
-    Queries 2 is a complete replacement for the old queries module.
+    Queries is a complete replacement for the old queries module.
     While it is the successor it lacks some features that are not implemented on purpose.
 
 SADU provides a query builder, which allows easy guidance through requesting data from your database.
@@ -12,7 +12,7 @@ Import into your project to use it.
 
 ```java
 dependencies {
-    implementation("de.chojo.sadu", "sadu-queries2", "<version>")
+    implementation("de.chojo.sadu", "sadu-queries", "<version>")
 }
 ```
 
