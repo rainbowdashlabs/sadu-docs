@@ -1,41 +1,47 @@
 # Configuration
 
-You can set a default configuration for the query builder.
-That will make it much easier for us and will avoid of code repetitions.
-The config will be applied to all created query builders.
-No matter where or when they are created.
+When configuring your query object you have two options.
+In general, you always need a configured Queryconfiguration.
+
+## Using a QueryConfiguration instance
+
+The `QueryConfiguration` class allows you to configure the behaviour of your query.
 
 ```java
-import static org.slf4j.LoggerFactory.getLogger;
-
-public class Main {
-    private static final org.slf4j.Logger log = getLogger(Main.class);
-    
-    public static void main(String[] args) {
-        QueryBuilderConfig.setDefault(QueryBuilderConfig.builder()
-            .withExceptionHandler(err -> {
-                log.error("An error occured during a database request",err);
-            })
-            .withExecutor(Executors.newCachedThreadPool())
-            .build());
-    }
-}
+QueryConfiguration config = QueryConfiguration.builder(dataSource)
+        // Register a handler to log exceptions
+        .setExceptionHandler(err -> log.error("An error occured during a database request", err))
+        // As an alternative you can make the query throw the exception instead of just logging it
+        .setThrowExceptions(true)
+        // This only affects batch queries.
+        // This will cause all batch queries being executed in a single transaction
+        // True is the default
+        .setAtomic(true)
+        // Register a RowMapperRegistry to map results.
+        .setRowMapperRegistry(new RowMapperRegistry().register(PostgresqlMapper.getDefaultMapper()))
+        .build();
 ```
-## Executor
-The excecutor for the completable futures can be set via `QueryBuilderConfig.Builder#withExecutor()`
 
-## Exception handler
-Make sure to add an exception handler. Otherwise error will be silent.
+After that you can use that config to create new queries
 
-## Throwing
+```java
+config.query("SELECT ...")
+```
 
-By default, the query builder will catch all SQL Exceptions and log them properly.\
-If you want to log them by yourself you should call `QueryBuilderConfig.Builder#throwing()` on the builder. As an
-alterantive you can set a LoggingAdapter in the `QueryBuilderConfig`
+## Using the static global configuration
 
-## Atomic Transaction
+Instead of passing your config everywhere, you can set the global configuration.
 
-By default, the query builder will execute all queries in one atomic transaction. This has the effect, that the data will
-only be changed if all queries were executed succesfully. This is especially usefull, when executing multiple queries.
-If you don't want this call `QueryBuilderConfig.Builder#notAtomic()`. Tbh there is no real reason why you would want
-this.
+The default configuration is always used when the `Query` class is used to create a query.
+
+To define the global configuration you just need to create it as in the previous section and pass it into the QueryConfiguration class.
+
+```java
+QueryConfiguration.setDefault(config);
+```
+
+Now you can use the `Query` class to directly dispatch queries.
+
+```java
+Query.query("SELECT ...")
+```

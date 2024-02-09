@@ -18,13 +18,8 @@ nav:
       - queries/index.md
       - 'Configuration': queries/configuration.md
       - 'Examples': queries/examples.md
-      - 'Stages': queries/stages.md
-  - 'Queries 2':
-      - queries2/index.md
-      - 'Configuration': queries2/configuration.md
-      - 'Examples': queries2/examples.md
-      - 'Components': queries2/components.md
-      - 'Migration': queries2/migration.md
+      - 'Components': queries/components.md
+      - 'Migration': queries/migration.md
   - 'Sql Types':
       - types/index.md
   - 'Updater':
@@ -33,6 +28,13 @@ nav:
       - 'Execution': updater/execution.md
       - 'Patching': updater/patching.md
       - 'Migration': updater/migration.md
+  - 'Testing':
+      - testing/index.md
+  - 'Queries Legacy':
+      - queries_legacy/index.md
+      - 'Configuration': queries_legacy/configuration.md
+      - 'Examples': queries_legacy/examples.md
+      - 'Stages': queries_legacy/stages.md
 
 theme:
   features:
