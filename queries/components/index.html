@@ -749,6 +749,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Results
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#read-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Read Results
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#write-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Write Results
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1365,6 +1398,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Results
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#read-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Read Results
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#write-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Write Results
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1555,6 +1621,18 @@ If there is a method lacking for a common object, or you need a specific layout 
 </ol>
 <h2 id="row-mapping">Row Mapping<a class="headerlink" href="#row-mapping" title="Permanent link">&para;</a></h2>
 <p>A row mapping is simply a mapping of a row in a sql result into a java object. </p>
+<h2 id="results">Results<a class="headerlink" href="#results" title="Permanent link">&para;</a></h2>
+<p>There are four types of results, which differ between read and write operations.
+Results contain information of the operation results and also allow access to exceptions via the <code>exceptions()</code> method.</p>
+<h3 id="read-results">Read Results<a class="headerlink" href="#read-results" title="Permanent link">&para;</a></h3>
+<p>For reading, you can either use the <code>first()</code> or <code>all()</code> methods to directly retrieve your object.
+If you need more information you can use <code>firstResult()</code> or <code>allResults()</code>, which return either a SingleResult or a MultiResult.
+This Result still allows you to access your read objects via the <code>result()</code> method.</p>
+<h3 id="write-results">Write Results<a class="headerlink" href="#write-results" title="Permanent link">&para;</a></h3>
+<p>For writing, you have two results, which differ depending on your call.
+You will always end up with a <code>ManipulationResult</code>, which provides the changed <code>rows()</code> and a boolean <code>changed()</code> to indicate that rows is not zero. 
+If you execute a batch call you will get a <code>ManipulationBatchResult</code>, which has the same methods that return the sum of all rows.
+Additionally, you have access to all individual <code>ManipulationResult</code>s.</p>
 
 
 
@@ -1577,7 +1655,7 @@ If there is a method lacking for a common object, or you need a specific layout 
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 9, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 13, 2024</span>
   </span>
 
     
