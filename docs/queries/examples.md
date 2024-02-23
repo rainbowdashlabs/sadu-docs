@@ -25,7 +25,7 @@ This returns all matching entries for our query and maps it to a user.
 List<User> users = query.query("SELECT * FROM users WHERE id = ? AND name ILIKE :name")
         .single(Call.of().bind(1).bind("name", "lilly"))
         .map(User.map())
-        .allAndGet();
+        .all();
 ```
 
 ### Get First
@@ -38,7 +38,7 @@ If a result was returned the option won't be empty.
 Optional<User> user = query.query("SELECT * FROM users where id = :id")
         .single(Call.of().bind("id", 1)))
         .map(User.map())
-        .oneAndGet();
+        .first();
 ```
 
 
@@ -121,7 +121,7 @@ try (var conn = query.withSingleTransaction()) {
 List<User> users = query.query("SELECT * FROM users")
         .single()
         .map(User::map)
-        .allAndGet();
+        .all();
 
 // Make sure that the first insert was not commited
 Assertions.assertEquals(0, users.size());
