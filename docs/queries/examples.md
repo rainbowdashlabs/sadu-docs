@@ -45,8 +45,9 @@ Optional<User> user = query.query("SELECT * FROM users where id = :id")
 
 ## Insert, Update and Delete
 
-Inserts, updates and deletes are currently all handled the same.
-The only difference is the last call, which are only an alias.
+Inserts, updates and deletes are currently all handled nearly the same.
+Deletes and updates return an ManipulationResult, which allows access to the changed rows.
+Inserts return an InsertionResult, which provides additional access to generated keys.
 
 ### Single
 
@@ -54,7 +55,7 @@ Insert a single value.
 
 ```java
 // Insert multiple entries at the same time
-ManipulationResult change = query
+InsertionResult change = query
         // Define the query
         .query("INSERT INTO users(uuid, name) VALUES(:uuid::uuid,?)")
         // Create a new call
@@ -75,7 +76,7 @@ Execute multiple inserts.
 
 ```java
 // Insert multiple entries at the same time
-ManipulationBatchResult change = query
+InsertionBatchResult<InsertionResult> change = query
         // Define the query
         .query("INSERT INTO users(uuid, name) VALUES(?::uuid,?)")
         // Create a new batch call

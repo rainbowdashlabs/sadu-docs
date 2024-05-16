@@ -19,8 +19,7 @@ Nothing changed for passing queries.
 
 ## Migrating getKey()
 
-All supported databases now support returning, therefore the method was removed.
-Use `RETURNING` instead in your queries
+the getKey Option is now available via the insertAndGetKeys method. All keys will always be resolved.
 
 ## Migrating async calls
 
