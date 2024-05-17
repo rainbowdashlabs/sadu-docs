@@ -2,92 +2,92 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://sadu.docs.chojo.dev/</loc>
-         <lastmod>2024-05-16</lastmod>
+         <lastmod>2024-05-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sadu.docs.chojo.dev/data_source/</loc>
-         <lastmod>2024-05-16</lastmod>
+         <lastmod>2024-05-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sadu.docs.chojo.dev/queries/</loc>
-         <lastmod>2024-05-16</lastmod>
+         <lastmod>2024-05-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sadu.docs.chojo.dev/queries/components/</loc>
-         <lastmod>2024-05-16</lastmod>
+         <lastmod>2024-05-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sadu.docs.chojo.dev/queries/configuration/</loc>
-         <lastmod>2024-05-16</lastmod>
+         <lastmod>2024-05-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sadu.docs.chojo.dev/queries/examples/</loc>
-         <lastmod>2024-05-16</lastmod>
+         <lastmod>2024-05-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sadu.docs.chojo.dev/queries/migration/</loc>
-         <lastmod>2024-05-16</lastmod>
+         <lastmod>2024-05-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sadu.docs.chojo.dev/queries_legacy/</loc>
-         <lastmod>2024-05-16</lastmod>
+         <lastmod>2024-05-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sadu.docs.chojo.dev/queries_legacy/configuration/</loc>
-         <lastmod>2024-05-16</lastmod>
+         <lastmod>2024-05-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sadu.docs.chojo.dev/queries_legacy/examples/</loc>
-         <lastmod>2024-05-16</lastmod>
+         <lastmod>2024-05-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sadu.docs.chojo.dev/queries_legacy/stages/</loc>
-         <lastmod>2024-05-16</lastmod>
+         <lastmod>2024-05-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sadu.docs.chojo.dev/testing/</loc>
-         <lastmod>2024-05-16</lastmod>
+         <lastmod>2024-05-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sadu.docs.chojo.dev/types/</loc>
-         <lastmod>2024-05-16</lastmod>
+         <lastmod>2024-05-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sadu.docs.chojo.dev/updater/</loc>
-         <lastmod>2024-05-16</lastmod>
+         <lastmod>2024-05-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sadu.docs.chojo.dev/updater/execution/</loc>
-         <lastmod>2024-05-16</lastmod>
+         <lastmod>2024-05-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sadu.docs.chojo.dev/updater/migration/</loc>
-         <lastmod>2024-05-16</lastmod>
+         <lastmod>2024-05-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sadu.docs.chojo.dev/updater/patching/</loc>
-         <lastmod>2024-05-16</lastmod>
+         <lastmod>2024-05-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://sadu.docs.chojo.dev/updater/setup/</loc>
-         <lastmod>2024-05-16</lastmod>
+         <lastmod>2024-05-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
