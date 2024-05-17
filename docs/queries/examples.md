@@ -54,7 +54,7 @@ Inserts return an InsertionResult, which provides additional access to generated
 Insert a single value.
 
 ```java
-// Insert multiple entries at the same time
+// Insert a single entry
 InsertionResult change = query
         // Define the query
         .query("INSERT INTO users(uuid, name) VALUES(:uuid::uuid,?)")
@@ -66,7 +66,7 @@ InsertionResult change = query
 
 // Check that something changed
 Assertions.assertTrue(change.changed());
-// Check that two rows were added
+// Check that one row was added
 Assertions.assertEquals(change.rows(), 1);
 ```
 
