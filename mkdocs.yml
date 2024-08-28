@@ -20,6 +20,10 @@ nav:
       - 'Examples': queries/examples.md
       - 'Components': queries/components.md
       - 'Migration': queries/migration.md
+  - 'Mapping':
+      - mapping/index.md
+      - 'Configuration': mapping/configuration.md
+      - 'Custom Mapper': mapping/custom_mapper.md
   - 'Sql Types':
       - types/index.md
   - 'Updater':

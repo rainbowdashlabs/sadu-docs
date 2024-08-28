@@ -10,7 +10,7 @@ services:
     profiles:
       - dev
     ports:
-      - "80:80"
+      - "8888:80"
 
   docs_live:
     build:
