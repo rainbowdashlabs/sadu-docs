@@ -7,7 +7,7 @@ Import into your project to use it.
 
 ```java
 dependencies {
-    implementation("de.chojo.sadu", "sadu-mapping", "<version>")
+    implementation("de.chojo.sadu", "sadu-mapper", "<version>")
 }
 ```
 
