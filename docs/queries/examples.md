@@ -1,6 +1,6 @@
 # Examples
 
-This page contains several examples for the usage of the query builder.
+This page contains several examples for the usage of the [query builder][[Query]].
 For in depth examples for the components have a look at the [components page](components.md)
 
 ## Select
@@ -46,8 +46,8 @@ Optional<User> user = query.query("SELECT * FROM users where id = :id")
 ## Insert, Update and Delete
 
 Inserts, updates and deletes are currently all handled nearly the same.
-Deletes and updates return an ManipulationResult, which allows access to the changed rows.
-Inserts return an InsertionResult, which provides additional access to generated keys.
+Deletes and updates return an <ManipulationResult>, which allows access to the changed rows.
+Inserts return an <InsertionResult>, which provides additional access to generated keys.
 
 ### Single
 

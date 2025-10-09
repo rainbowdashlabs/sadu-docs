@@ -2,7 +2,7 @@
 
 {{ version }}
 
-SADU has implementations to easily create datasources for different RDBMS. Use this to import it.
+SADU has implementations to easily create [datasources][[jdk -> DataSource]] for different RDBMS. Use this to import it.
 
 ```kts
 dependencies {
@@ -20,9 +20,9 @@ SADU provides a datasource creator to create a datasource using [HikariCP](https
 
 ## Creating a datasource
 
-The DataSourceCreator can be used to build a HikariDataScource with a builder pattern.
+The <DataSourceCreator> can be used to build a <HikariDataSource> with a builder pattern.
 
-Choose the correct SqlType for your data source. The methods available in the configuration depend on the SqlType.
+Choose the correct <SqlType> for your data source. The methods available in the configuration depend on the <SqlType>.
 
 !!! note
 
@@ -61,7 +61,7 @@ class Main {
 
 ## Using relocation
 
-When using relocation you need to call `#driverClass` in the configure call and provide your driver class.
+When using relocation you need to call <JdbcConfig#driverClass(Class)> or <JdbcConfig#driverClass(String)> in the configure call and provide your driver class.
 This will avoid issues caused by the relocation which might block loading of the driver class.
 
 ```java

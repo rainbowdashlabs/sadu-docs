@@ -5,9 +5,9 @@ While it is the successor, there are some features that are not implemented on p
 
 ## Migrating QueryFactory and QueryBuilderConfig
 
-The functionality of the `QueryFactory` and `QueryBuilderConfig` are merged into `QueryConfiguration`.
+The functionality of the `QueryFactory` and `QueryBuilderConfig` are merged into <de.chojo.sadu.queries.api.configuration.QueryConfiguration>.
 
-The `builder()` method is now either `Query.query(String)` or `QueryConfiguration#query(String)`.
+The `builder()` method is now either <Query#query(String,Object...)> or <de.chojo.sadu.queries.api.configuration,QueryConfiguration#query(String,Object...)>.
 
 ## Migrating calls to builder()
 
@@ -19,7 +19,7 @@ Nothing changed for passing queries.
 
 ## Migrating getKey()
 
-the getKey Option is now available via the insertAndGetKeys method. All keys will always be resolved.
+the getKey Option is now available via the <CalledSingletonQuery#insertAndGetKeys()> or <CalledBatchQuery#insertAndGetKeys()> method. All keys will always be resolved.
 
 ## Migrating async calls
 

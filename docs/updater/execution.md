@@ -1,6 +1,6 @@
 # Execution
 
-So execute the updater, we need to create a instance of it, pass a datasource and execute it after some minimal
+So execute the updater, we need to create an instance of it, pass a datasource and execute it after some minimal
 configuration.
 
 ```java

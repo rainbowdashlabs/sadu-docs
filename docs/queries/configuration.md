@@ -1,11 +1,11 @@
 # Configuration
 
 When configuring your query object you have two options.
-In general, you always need a configured Queryconfiguration.
+In general, you always need a configured <de.chojo.sadu.queries.api.configuration.QueryConfiguration>.
 
 ## Using a QueryConfiguration instance
 
-The `QueryConfiguration` class allows you to configure the behaviour of your query.
+The <de.chojo.sadu.queries.api.configuration.QueryConfiguration> class allows you to configure the behaviour of your query.
 
 ```java
 QueryConfiguration config = QueryConfiguration.builder(dataSource)
@@ -32,15 +32,15 @@ config.query("SELECT ...")
 
 Instead of passing your config everywhere, you can set the global configuration.
 
-The default configuration is always used when the `Query` class is used to create a query.
+The default configuration is always used when the <Query> class is used to create a query.
 
-To define the global configuration you just need to create it as in the previous section and pass it into the QueryConfiguration class.
+To define the global configuration you just need to create it as in the previous section and pass it into the <de.chojo.sadu.queries.api.configuration.QueryConfiguration> class.
 
 ```java
 QueryConfiguration.setDefault(config);
 ```
 
-Now you can use the `Query` class to directly dispatch queries.
+Now you can use the <Query> class to directly dispatch queries.
 
 ```java
 Query.query("SELECT ...")
