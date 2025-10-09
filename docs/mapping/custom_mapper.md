@@ -18,7 +18,7 @@ public class MappedClass {
 
 ## Manual way
 
-The manual way requires us to create a <de.chojo.sadu.mapper.rowmapper.RowMapper> for each class we want to map and register it manually.
+The manual way requires us to create a <RowMapper> for each class we want to map and register it manually.
 
 ```java
 RowMapperRegistry registry = new RowMapperRegistry();
@@ -30,7 +30,7 @@ registry.register(mapper);
 ```
 
 The column call should add all columns that need to be present for the row mapper to map the row.
-Multiple [row mappers][[de.chojo.sadu.mapper.rowmapper.RowMapper]] can exist for the same class, requiring different amounts of rows.
+Multiple [row mappers][[RowMapper]] can exist for the same class, requiring different amounts of rows.
 If a row mapper has zero columns it is considered a wildcard and will be used when no other matching mapper is found.
 
 ## Annotation Based
