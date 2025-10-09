@@ -11,7 +11,7 @@ dependencies {
 }
 ```
 
-Every class that has a registered row mapping can then be passed into the mapAs method during query retrieval.
+Every class that has a registered row mapping can then be passed into the [mapAs][[CalledSingletonQuery#mapAs(Class)]] method during query retrieval.
 
 ```java
 MappedClass methodMappedClass = query("Select 'test' as test")

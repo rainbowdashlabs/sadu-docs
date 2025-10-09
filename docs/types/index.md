@@ -2,7 +2,7 @@
 
 {{ version }}
 
-SADU has implementations for four different sql types. Simply import the artifact you need into your project.
+SADU has implementations for four different [sql types][[SqlType]]. Simply import the artifact you need into your project.
 
 ```js
 dependencies {
@@ -13,8 +13,8 @@ dependencies {
 }
 ```
 
-The type itself can be retrieved from the type class. Each typeclass provides one general getter via `Type.get()`
-and one by its name via `Type.type()`.
+The type itself can be retrieved from the type class. Each typeclass provides one general getter via `Type#get()`
+and one by its name via `Type#type()`.
 
 === "PostgreSQL"
 

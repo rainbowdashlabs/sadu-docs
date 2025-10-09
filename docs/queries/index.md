@@ -7,7 +7,7 @@
     Queries is a complete replacement for the old queries module.
     While it is the successor it lacks some features that are not implemented on purpose.
 
-SADU provides a query builder, which allows easy guidance through requesting data from your database.
+SADU provides a [query builder][[Query]], which allows easy guidance through requesting data from your database.
 Import into your project to use it.
 
 ```java
@@ -75,4 +75,4 @@ The query builder will:
 
 The query builder guides you through different phases.
 These phases will allow you to only call methods which make sense in the current context.
-It is for exampe not possible to read a row without defining a query first.
+It is for example not possible to read a row without defining a query first.

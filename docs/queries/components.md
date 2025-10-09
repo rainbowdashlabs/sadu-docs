@@ -1,6 +1,6 @@
 # Components
 
-The query builder has several components with their own feature set.
+The [query builder][[Query]] has several components with their own feature set.
 
 ## Query
 
@@ -60,7 +60,7 @@ Examples:
 
     Do not use that feature with untrusted user input!
 
-When defining a query you can append objects which are used in a `String#formatted` call.
+When defining a query you can append objects which are used in a <jdk -> String#formatted(Object...)> call.
 This allows you to inject row or table names in runtime to reuse queries.
 
 ```java
@@ -77,7 +77,7 @@ Calls are used to define the amount of calls.
 
 ### Singleton Call
 
-A singleton call is a single execution of your query.
+A singleton call is a single execution of your [query][[Query]].
 
 There are several ways to define your singleton query.
 
@@ -162,17 +162,18 @@ Batch calls are similar to singleton calls.
 
 A call is used to define the parameters of a query execution.
 
-You can define a parameter by calling `bind(String, Object)` or `bind(Object)`
+You can define a parameter by calling <Call#bind(String,Object[],SqlType)>, <Call#bind(Object[],SqlType)> or some other
+overload of this method.
 
 ### Indexed parameter
 
-To bind an indexed parameter (Parameters that are defined with `?`) use the `bind(Object)` method.
+To bind an indexed parameter (Parameters that are defined with `?`) use the <Call#bind(Object[],SqlType)> method.
 
 The type of your parameter will be automatically defined.
 
 ### Named parameter
 
-To bind a named parameter (Parameter that are defined with `:parameter_name`) use the `bind(String, Object)` method.
+To bind a named parameter (Parameter that are defined with `:parameter_name`) use the <Call#bind(String, Object[],SqlType)> method.
 
 The string is the name of the parameter without `:`
 
@@ -212,15 +213,15 @@ Adapter are used to transform a java object into a sql object and apply it on a 
 
 ### Custom Adapter
 
-To define a custom adapter you can use the `Adapter.create(Class<T> class, AdapterMapping<T> mapping, int type)` method.
+To define a custom adapter you can use the <Adapter#create(Class,AdapterMapping,int)> method.
 
 This method has three important parameter:
 
-1. clazz
+1. <jdk -> Class> clazz
     This is the java class that the adapter will convert into a sql type.
-2. AdapterMapping
+2. <AdapterMapping> mapping
     The AdapterMapping maps the java type to the sql type and applies it to the statement on the provided index.
-3. Type
+3. `int` Type
     The sql type to be used if the type is null.
 
 ## Row Mapping
@@ -230,17 +231,17 @@ A row mapping is simply a mapping of a row in a sql result into a java object.
 ## Results
 
 There are four types of results, which differ between read and write operations.
-Results contain information of the operation results and also allow access to exceptions via the `exceptions()` method.
+Results contain information of the operation results and also allow access to exceptions via the `BaseResult#exceptions()` method.
 
 ### Read Results
 
-For reading, you can either use the `first()` or `all()` methods to directly retrieve your object.
-If you need more information you can use `firstResult()` or `allResults()`, which return either a SingleResult or a MultiResult.
-This Result still allows you to access your read objects via the `result()` method.
+For reading, you can either use the <Reader#first()> or <Reader#all()> methods to directly retrieve your object.
+If you need more information you can use <Reader#firstResult()> or <Reader#allResults()>, which return either a SingleResult or a MultiResult.
+This Result still allows you to access your read objects via the <Result#result()> method.
 
 ### Write Results
 
 For writing, you have two results, which differ depending on your call.
-You will always end up with a `ManipulationResult`, which provides the changed `rows()` and a boolean `changed()` to indicate that rows is not zero. 
-If you execute a batch call you will get a `ManipulationBatchResult`, which has the same methods that return the sum of all rows.
-Additionally, you have access to all individual `ManipulationResult`s.
+You will always end up with a <ManipulationResult>, which provides the changed <ManipulationResult#rows()> and a boolean <ManipulationResult#changed()> to indicate that rows is not zero. 
+If you execute a batch call you will get a <ManipulationBatchResult>, which has the same methods that return the sum of all rows.
+Additionally, you have access to all individual <ManipulationResult>s.
