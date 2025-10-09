@@ -1,6 +1,6 @@
 ## Picking a SQL Type
 
-You need a [sql type](types) to use this module.
+You need a [sql type](/types) to use this module.
 These types are provided by our database implementations. 
 Make sure to import the one you need.
 
