@@ -103,7 +103,7 @@ def replace_in_files(folder):
         r'extends QueryFactory': '',
         r'import de\.chojo\.sadu\.base\.QueryFactory;': '',
         r'import de.chojo.sadu.wrapper.QueryBuilderConfig;': '',
-        r'.append()': '.append() /* TODO: Append is no longer supported.\nUse a single transaction configuration instead. https://sadu.docs.chojo.dev/queries/examples/#single-transaction-mode.\nIf you are submitting in a for loop consider a batch statement instead. https://sadu.docs.chojo.dev/queries/components/#__tabbed_3_3*/',
+        r'.append()': '.append() /* TODO: Append is no longer supported.\nUse a single transaction configuration instead. https://rainbowdashlabs.github.io/sadu-docs/queries/examples/#single-transaction-mode.\nIf you are submitting in a for loop consider a batch statement instead. https://rainbowdashlabs.github.io/sadu-docs/queries/components/#__tabbed_3_3*/',
         r'de.chojo.sadu.databases.SqLite': 'de.chojo.sadu.sqlite.databases.SqLite',
         r'de.chojo.sadu.databases.MariaDb': 'de.chojo.sadu.mariadb.databases.MariaDb',
         r'de.chojo.sadu.databases.PostgreSql': 'de.chojo.sadu.postgresql.databases.PostgreSql',
